@@ -1,7 +1,18 @@
 var http = require("http");
+var url = require("url");
+function start(route){
+  function onRequest(request, response) {
+    var pathname = url.parse(request.url).pathname;
+    console.log("Request for "+pathname+" received");
 
-var server = http.createServer(function(request,response){
-  response.writeHead(200,{"Content-Type":"text/plain"});
-  response.write("hello,world");
-  response.end();
-}).listen(8888);
+    route(pathname);
+
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("hello,world");
+    response.end();
+  }
+  var server = http.createServer(onRequest).listen(8888);
+  console.log("Server has started"); //在命令行里打出而不是在浏览器的console里。
+}
+
+exports.start = start;
