@@ -1,3 +1,4 @@
+
 function route(handle,pathname,response){
   console.log("About to route a requeste for " + pathname);
   if (typeof handle[pathname] === 'function'){
