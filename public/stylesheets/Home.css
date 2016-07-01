@@ -1,0 +1,109 @@
+@font-face {
+  font-family: FZLT;
+  src:url('../fonts/方正兰亭纤黑.ttf');
+}
+@font-face {
+  font-family: 汉仪元隆黑-35简;
+  src:url('../fonts/汉仪元隆黑-35简.ttf');
+}
+html{
+  height: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("../images/home_bk.jpg");
+  background-position: left;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+#header,  #title,#tabs,#footer{
+  float: left;
+}
+#header{
+  width: 100%;
+  height: 60px;
+  background-color: #224466;
+  /*border-bottom: 5px solid #FFD;*/
+  opacity: 0.2;
+}
+#title{
+  margin-top: 80px;
+  padding-left: 10%;
+  width:40% !important;
+  background-color: rgba(0, 0, 0, 0.2);;
+  border-top-right-radius:50px;
+  border-bottom-right-radius:50px;
+}
+.title{
+  font-weight: 500;
+  font-family: FZLT;
+  text-decoration: none;
+  text-align: left;
+  color:#FFF;
+  opacity: 0.9;
+}
+#title1{
+  font-size: 3.5em;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+
+  opacity: 0.9;
+}
+#title2{
+  color: #2AE;
+  font-size: 40px;
+  width: 200px;
+  float: left;
+  margin-top: 20px;
+}
+#title3{
+  font-size: 30px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 28px;
+}
+#tabs{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.tabs{
+  float:left;
+  margin-top: 50px;
+  margin-right: 20px;
+}
+.tabs>a{
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: 汉仪元隆黑-35简 ;
+}
+#footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  opacity: 0.2;
+}
+.button-action,
+.button-action-flat {
+  background-color: #2299FF;
+  border-color: #2299FF;
+  color: #FFF; }
+.button-action:visited,
+.button-action-flat:visited {
+  color: #FFF;
+}
+.button-action:hover,
+.button-action:focus{
+  background-color: #22AAFF;
+  border-color:#22AAFF;
+  color: #FFF;
+}
+.button-action:active {
+  background-color: #22AAFF;
+  border-color: #22AAFF;
+  color: #FFF;
+}
