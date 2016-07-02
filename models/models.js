@@ -1,0 +1,30 @@
+module.exports = {
+  car:{
+    Manufacturer:{type:String},
+    carType:{type:String},
+    productionTime:{type:Date},
+    buyTIme:{type:Date},
+    saleTime:{type:Date},
+    price:{type:Number},
+    discount:{type:Number}
+  },
+  customer:{
+    name:{type:String},
+    gender:{type:Boolean,default:true},
+    customerSource:{type:String},
+    tel:{type:String},
+    email:{type:String},
+    address:{type:String},
+    credit:{type:String},
+    dealTimes:{type:Number},
+    dealSumMoney:{type:Number},
+    lastDealTime:{type:Date}
+  },
+  sale:{
+    customerId:{type:String},
+    carId:{type:String},
+    price:{type:Number},
+    discount:{type:Number},
+    payMethod:{type:String}
+  }
+};

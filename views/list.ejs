@@ -5,49 +5,87 @@
   <title>车辆信息</title>
   <link rel="stylesheet" href="../stylesheets/buttons.css">
   <link rel="stylesheet" href="../stylesheets/public.css">
-  <link rel="stylesheet" href="../stylesheets/car.css">
+  <link rel="stylesheet" href="../stylesheets/list.css">
   <script type="text/javascript" src="../javascripts/jquery-1.12.4.min.js"></script>
-  <script type="text/javascript" src="../javascripts/car.js"></script>
+  <script type="text/javascript" src="../javascripts/list.js"></script>
 </head>
-<body>
-  <div id="header">
-    <div id="tabsBlock">
-      <a href="/" class="button button-action button-large  button-pill">首页</a>
-      <a href="/list?listType=car" class="button button-action button-large  button-pill">车辆信息</a>
-      <a href="/list?listType=customer" class="button button-action button-large  button-pill">客户信息</a>
-      <a href="/list?listType=sale" class="button button-action button-large  button-pill">销售情况</a>
-    </div>
-    <div id="searchBar">
-      <input type="text" id="searchInput" style="  width:250px; height:30px; font-size: 20px;border-radius:15px;padding:3px 10px;">
-      <a href=""><img src="../images/搜索.png" alt=""></a>
-    </div>
-  </div>
-
-  <div id="InfoList">
-    <div id="title">
-      <h3><%= title%></h3>
-      <div id="addInfo">
-        <img src="../images/加号.png" alt="">
-        <p>添加信息</p>
-      </div>
-    </div>
-    <div id="TypeList">
-      <%if(listType=="car"){%>
-        <!-- car list part -->
-        <div><%= listType%>1</div>
-
-      <% }else if(listType=="customer"){%>
-        <!-- customer list part -->
-        <div><%= listType%>2</div>
-      <% }else if(listType=="sale"){%>
-        <!-- sale list part -->
-        <div><%= listType%>3</div>
+<%- include header%>
+    <div id="list">
+      <%if(listType == "car"){%>
+        <table>
+          <tr>
+            <th>
+              <p>车辆编号</p>
+            </th>
+            <th>
+              <p>车辆生产厂家</p>
+            </th>
+            <th>
+              <p>车辆型号</p>
+            </th>
+          </tr>
+          <%for(var i=0;i<posts.length;i++){%>
+          <tr>
+            <td><p><a class="editInfoBtn" href=""><img src="./images/修改.png" alt="" /></a><a href="" class="carId"><%=posts[i]._id%></a></p></td>
+            <td><p><%=posts[i].Manufacturer%></p></td>
+            <td><p><%=posts[i].carType%></p></td>
+          </tr>
+          <%}%>
+        </table>
+      <%}else if(listType == "customer"){%>
+        <table>
+          <tr>
+            <th>
+              <p>客户编号</p>
+            </th>
+            <th>
+              <p>客户姓名</p>
+            </th>
+            <th>
+              <p>性别</p>
+            </th>
+            <th>
+              <p>最近交易时间</p>
+            </th>
+          </tr>
+          <%for(var i=0;i<posts.length;i++){%>
+          <tr>
+            <td><p><a href=""><%=posts[i]._id%></a></p></td>
+            <td><p><a href=""><%=posts[i].name%></a></p></td>
+            <td><p><%=posts[i].gender%></p></td>
+            <td><p><%=posts[i].gender%></p></td>
+          </tr>
+          <%}%>
+        </table>
+      <%}else if(listType == "sale"){%>
+        <table>
+          <tr>
+            <th>
+              <p>订单编号</p>
+            </th>
+            <th>
+              <p>客户编号</p>
+            </th>
+            <th>
+              <p>客户姓名</p>
+            </th>
+            <th>
+              <p>车辆编号</p>
+            </th>
+            <th>
+              <p>交易价格</p>
+            </th>
+          </tr>
+          <%for(var i=0;i<posts.length;i++){%>
+          <tr>
+            <td><p><a href=""><%=posts[i]._id%></a></p></td>
+            <td><p><a href=""><%=posts[i].customerId%></a></p></td>
+            <td><p><%=posts[i].customerName%></p></td>
+            <td><p><a href=""><%=posts[i].carId%></a></p></td>
+            <td><p><a href=""><%=posts[i].price%></a></p></td>
+          </tr>
+          <%}%>
+        </table>
       <%}%>
     </div>
-  </div>
-  <div id="footer">
-
-  </div>
-
-</body>
-</html>
+<%- include footer%>

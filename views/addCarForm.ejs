@@ -1,0 +1,40 @@
+<form action="">
+  <table>
+    <!-- <tr>
+      <td><label for="CarId">车辆编号</label></td>
+      <td><input id="CarId" type="text"></td>
+    </tr> -->
+    <tr>
+      <td><label for="Manufacturer">生产厂家</label></td>
+      <td><input id="Manufacturer" type="text" value="<%if(posts!=null){%><%=posts.Manufacturer%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="carType">车辆型号</label></td>
+      <td><input id="carType" type="text" value="<%if(posts!=null){%><%=posts.carType%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="productionTime">生产年月</label></td>
+      <td><input id="productionTime" type="date" value="<%if(posts!=null){%><%=posts.productionTime%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="buyTime">购入年月</label></td>
+      <td><input id="buyTime" type="date" value="<%if(posts!=null){%><%=posts.buyTime%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="saleTime">出售年月</label></td>
+      <td><input id="saleTime" type="date" value="<%if(posts!=null){%><%=posts.saleTime%><%}%>" onblur="alert(this.value)"></td>
+    </tr>
+    <tr>
+      <td><label for="price">价格</label></td>
+      <td><input id="price" type="text" value="<%if(posts!=null){%><%=posts.price%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="discount">折扣</label></td>
+      <td><input id="discount" type="text" value="<%if(posts!=null){%><%=posts.discount%><%}%>"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><img src="../images/提交.png" alt=""></td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>添加信息</title>
+  <link rel="stylesheet" href="../stylesheets/buttons.css">
+  <link rel="stylesheet" href="../stylesheets/public.css">
+  <link rel="stylesheet" href="../stylesheets/add.css">
+  <link rel="stylesheet" href="../stylesheets/Form.css">
+  <script type="text/javascript" src="../javascripts/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="../javascripts/add.js"></script>
+</head>
+<%- include header%>
+    <div id="addInfoFrom">
+      <%if(listType == "car"){%>
+        <%- include addCarForm%>
+      <%}else if(listType == "customer"){%>
+        <%- include addCustomerForm%>
+      <%}else if(listType == "sale"){%>
+        <%- include addSaleForm%>
+      <%}%>
+    </div>
+<%- include footer%>
