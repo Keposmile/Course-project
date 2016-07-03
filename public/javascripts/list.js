@@ -24,7 +24,6 @@ $(function(){
   });
   editInfoBtn.click(function(){
     var index=editInfoBtn.index($(this));
-    alert(index);
     location.href = "/edit?InfoType="+data.listType+"&id="+$(".carId").eq(index).html();
     return false;
   });

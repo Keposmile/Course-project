@@ -100,26 +100,4 @@ module.exports = function (app) {
       });
     }
   });
-  // app.get("/list",function(req,res){
-  //   var listType = req.query.listType;
-  //   if (listType == "car") {
-  //     editCarInfo.getCarListByPage(1,function(err,car){
-  //       res.render("list",{
-  //         title:'车辆管理',
-  //         posts:car,
-  //         listType:listType
-  //       });
-  //     });
-  //   }else if (listType == "customer") {
-  //     res.render("list",{
-  //       title:'客户管理',
-  //       listType:listType
-  //     });
-  //   }else if (listType == "sale") {
-  //     res.render("list",{
-  //       title:'营销管理',
-  //       listType:listType
-  //     });
-  //   }
-  // });
 };
