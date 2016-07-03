@@ -1,5 +1,5 @@
 table{
-  width: 400px;
+  width:600px;
   margin-left: 10%;
   border-collapse:collapse;
   color:#4FFF88;
@@ -11,14 +11,14 @@ tr{
   height: 65px;
 }
 td{
-  width: 400px;
+  width: 500px;
   text-align: center;
   font-size: 20px;
 }
 td>input[type=text],td>input[type=date]{
   display: block;
   height: 30px;
-  width: 200px;
+  width: 300px;
   font-size: 20px;
   padding: 5px 10px;
   border: 0px solid #9FCA94;

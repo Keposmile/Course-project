@@ -1,8 +1,7 @@
 function madeDataObject(formData){
   var input = $("td input,input[type = date]");
   for(var i = 0;i<input.length;i++){
-    if(input.eq(i).attr("type") == "radio"){
-      formData[input.eq(i).attr("name")] = $("input[name=gender]").val();
+    if(input.eq(i).attr("type") == "radio"){//跳过性别判断
       i++;
     }
     else{
@@ -25,23 +24,38 @@ function parseQueryString(str){//url字段解析
   return result;
 }
 $(function(){
-  var addForm = $("#addForm");
+  var editForm = $("#editForm");
   var formData = {};
+  var genderRadio = $("input[name=gender]");
   var submitBtn =$("#submitBtn");
   var url = window.location.search;
   var typeData = {
-    listType:parseQueryString(url).listType,
-    url:window.location.pathname
+    InfoType:parseQueryString(url).InfoType,
+    url:window.location.pathname,
+    id:parseQueryString(url).id
   };
+  console.log(typeData.InfoType);
+  console.log(typeData.id);
+  genderRadio.click(function(){
+    // alert($(this).val());
+    formData.gender=$(this).val();
+  });
   submitBtn.click(function(){
+    console.log(typeData);
     formData = madeDataObject(formData);
+    console.log(typeData.InfoType);
+    console.log(typeData.id);
     $.ajax({
-      url:window.location.pathname+"?listType="+typeData.listType,
+      url:"/update?InfoType="+typeData.InfoType+"&id="+typeData.id,
       method:"post",
       data:formData,
-      success:function(){
-        console.log("success");
-        location.href = "/list?listType="+typeData.listType;
+      success:function(res){
+        if(res.success === 0){
+          console.log("success");
+          location.href = "/list?listType="+typeData.InfoType;
+        }else {
+          console.log("failed");
+        }
       }
     });
   });

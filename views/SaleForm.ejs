@@ -1,0 +1,29 @@
+<form id="addForm" action="">
+  <table>
+    <tr>
+      <td><label for="carId">车辆编号</label></td>
+      <td><input id="carId" type="text" value="<%if(posts!=null){%><%=posts.carId%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="customerId">客户编号</label></td>
+      <td><input id="customerId" type="text" value="<%if(posts!=null){%><%=posts.customerId%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="price">价格</label></td>
+      <td><input id="price" type="text" value="<%if(posts!=null){%><%=posts.price%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="discount">折扣</label></td>
+      <td><input id="discount" type="text" value="<%if(posts!=null){%><%=posts.discount%><%}%>"></td>
+    </tr>
+    <tr>
+      <td><label for="payMethod">结算方式</label></td>
+      <td><input id="payMethod" type="text" value="<%if(posts!=null){%><%=posts.payMethod%><%}%>"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><img id="submitBtn" src="../images/提交.png" alt=""></td>
+    </tr>
+  </table>
+
+</form>

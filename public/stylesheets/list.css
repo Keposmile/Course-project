@@ -12,12 +12,22 @@ td>p{
   margin-left: auto;
   margin-right: auto;
 }
-td>p>a>img{
+.editInfoBtn>img{
   float: left;
   margin-top: 6px;
   margin-right: 20px;
   width: 20px;
   height: 20px;
+}
+.deleteInfoBtn{
+  float: right;
+  margin-right: 5px;
+  width:17px;
+  height: 17px;
+  padding: 0;
+}
+.deleteInfoBtn:hover{
+  cursor: pointer;
 }
 table{
   color: #4FFF88;

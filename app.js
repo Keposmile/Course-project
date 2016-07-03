@@ -10,10 +10,10 @@ var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
 
+// global.dbModels = require('./models/db');
+var db = require('./models/db');
+db.openDb();
 var app = express();
-
-
-global.dbModels = require('./models/db');
 
 // all environments
 app.set('port', process.env.PORT || 3000);

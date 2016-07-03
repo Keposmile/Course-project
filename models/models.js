@@ -1,14 +1,14 @@
 module.exports = {
-  car:{
+  Cars:{
     Manufacturer:{type:String},
     carType:{type:String},
-    productionTime:{type:Date},
-    buyTIme:{type:Date},
-    saleTime:{type:Date},
+    productionTime:{type:String},
+    buyTime:{type:String},
+    saleTime:{type:String},
     price:{type:Number},
     discount:{type:Number}
   },
-  customer:{
+  Customers:{
     name:{type:String},
     gender:{type:Boolean,default:true},
     customerSource:{type:String},
@@ -18,9 +18,9 @@ module.exports = {
     credit:{type:String},
     dealTimes:{type:Number},
     dealSumMoney:{type:Number},
-    lastDealTime:{type:Date}
+    lastDealTime:{type:String}
   },
-  sale:{
+  Sales:{
     customerId:{type:String},
     carId:{type:String},
     price:{type:Number},

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>车辆信息</title>
+  <title>车辆营销管理系统</title>
   <link rel="stylesheet" href="../stylesheets/buttons.css">
   <link rel="stylesheet" href="../stylesheets/public.css">
   <link rel="stylesheet" href="../stylesheets/list.css">
@@ -26,9 +26,9 @@
           </tr>
           <%for(var i=0;i<posts.length;i++){%>
           <tr>
-            <td><p><a class="editInfoBtn" href=""><img src="./images/修改.png" alt="" /></a><a href="" class="carId"><%=posts[i]._id%></a></p></td>
+            <td><p><a class="editInfoBtn" href=""><img src="./images/修改.png" alt="" /></a><a href="" class="carId display"><%=posts[i]._id%></a></p></td>
             <td><p><%=posts[i].Manufacturer%></p></td>
-            <td><p><%=posts[i].carType%></p></td>
+            <td><p><%=posts[i].carType%><img class="deleteInfoBtn" src="./images/删除.png" alt="" /></p></td>
           </tr>
           <%}%>
         </table>
@@ -50,10 +50,10 @@
           </tr>
           <%for(var i=0;i<posts.length;i++){%>
           <tr>
-            <td><p><a href=""><%=posts[i]._id%></a></p></td>
-            <td><p><a href=""><%=posts[i].name%></a></p></td>
-            <td><p><%=posts[i].gender%></p></td>
-            <td><p><%=posts[i].gender%></p></td>
+            <td><p><a class="editInfoBtn" href=""><img src="./images/修改.png" alt="" /></a><a href="" class="customerId display"><%=posts[i]._id%></a></p></td>
+            <td><p><%=posts[i].name%></p></td>
+            <td><p><%if(posts[i].gender){%>男<%}else{%>女<%}%></p></td>
+            <td><p><%=posts[i].lastDealTime%><img class="deleteInfoBtn" src="./images/删除.png" alt="" /></p></td>
           </tr>
           <%}%>
         </table>
@@ -67,9 +67,6 @@
               <p>客户编号</p>
             </th>
             <th>
-              <p>客户姓名</p>
-            </th>
-            <th>
               <p>车辆编号</p>
             </th>
             <th>
@@ -78,11 +75,10 @@
           </tr>
           <%for(var i=0;i<posts.length;i++){%>
           <tr>
-            <td><p><a href=""><%=posts[i]._id%></a></p></td>
-            <td><p><a href=""><%=posts[i].customerId%></a></p></td>
-            <td><p><%=posts[i].customerName%></p></td>
-            <td><p><a href=""><%=posts[i].carId%></a></p></td>
-            <td><p><a href=""><%=posts[i].price%></a></p></td>
+            <td><p><a class="editInfoBtn" href=""><img src="./images/修改.png" alt="" /></a><a href="" class="saleId display"><%=posts[i]._id%></a></p></td>
+            <td><p><a class="display customerIdOnSale" href=""><%=posts[i].customerId%></a></p></td>
+            <td><p><a class="display carIdOnSale" href=""><%=posts[i].carId%></a></p></td>
+            <td><p><%=posts[i].price%><img class="deleteInfoBtn" src="./images/删除.png" alt="" /></p></td>
           </tr>
           <%}%>
         </table>

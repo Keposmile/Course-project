@@ -7,16 +7,16 @@
   <link rel="stylesheet" href="../stylesheets/public.css">
   <link rel="stylesheet" href="../stylesheets/Form.css">
   <script type="text/javascript" src="../javascripts/jquery-1.12.4.min.js"></script>
-  <script type="text/javascript" src="../javascripts/add.js"></script>
+  <script type="text/javascript" src="../javascripts/edit.js"></script>
 </head>
 <%- include header%>
   <div id="editForm">
     <%if(InfoType == "car"){%>
-      <%- include addCarForm%>
+      <%- include CarForm%>
     <%}else if(InfoType == "customer"){%>
-      <%- include addCustomerForm%>
+      <%- include CustomerForm%>
     <%}else if(InfoType == "sale"){%>
-      <%- include addSaleForm%>
+      <%- include SaleForm%>
     <%}%>
   </div>
 <%- include footer%>
