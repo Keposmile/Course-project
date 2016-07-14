@@ -1,0 +1,25 @@
+<body>
+  <div id="header">
+    <div id="tabsBlock">
+      <a href="/" class="button button-action button-large  button-pill">首页</a>
+      <a href="/list?listType=car" class="button button-action button-large  button-pill">车辆信息</a>
+      <a href="/list?listType=customer" class="button button-action button-large  button-pill">客户信息</a>
+      <a href="/list?listType=sale" class="button button-action button-large  button-pill">销售情况</a>
+    </div>
+    <%if(!show){%>
+    <div id="searchBar">
+      <input type="text" id="searchInput" value="请输入<%=type%>编号进行查询" onblur="if(!this.value)this.value='请输入<%=type%>编号进行查询'" onfocus="this.value=''" style="  width:250px; height:30px; font-size: 20px;border-radius:15px;padding:3px 10px;">
+      <a id="searchBtn"  href=""><img src="../images/搜索.png" alt=""></a>
+    </div>
+    <%}%>
+  </div>
+  <div id="InfoList">
+    <div id="title">
+      <h3><%= title%></h3>
+      <%if(!isAdd){%>
+        <div id="addInfo">
+          <img src="../images/加号.png" alt="">
+          <p>添加信息</p>
+        </div>
+      <%}%>
+    </div>

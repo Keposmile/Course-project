@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>车辆信息</title>
+  <link rel="stylesheet" href="../stylesheets/buttons.css">
+  <link rel="stylesheet" href="../stylesheets/public.css">
+  <link rel="stylesheet" href="../stylesheets/Form.css">
+  <script type="text/javascript" src="../javascripts/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="../javascripts/edit.js"></script>
+</head>
+<%- include header%>
+  <div id="editForm">
+    <%if(InfoType == "car"){%>
+      <%- include CarForm%>
+    <%}else if(InfoType == "customer"){%>
+      <%- include CustomerForm%>
+    <%}else if(InfoType == "sale"){%>
+      <%- include SaleForm%>
+    <%}%>
+  </div>
+<%- include footer%>

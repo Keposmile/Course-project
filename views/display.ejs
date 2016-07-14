@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>车辆营销管理系统</title>
+  <link rel="stylesheet" href="../stylesheets/buttons.css">
+  <link rel="stylesheet" href="../stylesheets/public.css">
+  <link rel="stylesheet" href="../stylesheets/Form.css">
+  <script type="text/javascript" src="../javascripts/jquery-1.12.4.min.js"></script>
+  <!-- <script type="text/javascript" src="../javascripts/edit.js"></script> -->
+</head>
+<%- include header%>
+  <div id="editForm">
+    <%if(posts!==null){%>
+    <%if(InfoType == "car"){%>
+        <table>
+          <tr>
+            <td><p id="CarId">车辆编号</p></td>
+            <td><p><%=posts._id%></p></td>
+          </tr>
+          <tr>
+            <td><p id="Manufacturer">生产厂家</p></td>
+            <td><p><%=posts.Manufacturer%></p></td>
+          </tr>
+          <tr>
+            <td><p id="carType">车辆型号</p></td>
+            <td><p><%=posts.carType%></p></td>
+          </tr>
+          <tr>
+            <td><p id="productionTime">生产年月</p></td>
+            <td><p><%=posts.productionTime%></p></td>
+          </tr>
+          <tr>
+            <td><p id="buyTime">购入年月</p></td>
+            <td><p><%=posts.buyTime%></p></td>
+          </tr>
+          <tr>
+            <td><p id="saleTime">出售年月</p></td>
+            <td><p><%=posts.saleTime%></p></td>
+          </tr>
+          <tr>
+            <td><p id="price">价格</p></td>
+            <td><p><%=posts.price%></p></td>
+          </tr>
+          <tr>
+            <td><p id="discount">折扣</p></td>
+            <td><p><%=posts.discount%></p></td>
+          </tr>
+        </table>
+      <%}else if(InfoType == "customer"){%>
+        <table>
+          <tr>
+            <td><p id="customerId">客户编号</p></td>
+            <td><p><%=posts._id%></p></td>
+          </tr>
+          <tr>
+            <td><p id="name">姓名</p></td>
+            <td><p><%=posts.name%></p></td>
+          </tr>
+          <tr>
+            <td><p id="gender">性别</p></td>
+            <td><p>
+              <%if(posts!=null && posts.gender){%>男<%}%>
+              <%if(posts!=null && (!posts.gender)){%>女<%}%>
+            </p></td>
+          </tr>
+          <tr>
+            <td><p id="customerSource">客户来源</p></td>
+            <td><p><%=posts.customerSource%></p></td>
+          </tr>
+          <tr>
+            <td><p id="tel">联系电话</p></td>
+            <td><p><%=posts.tel%></p></td>
+          </tr>
+          <tr>
+            <td><p id="email">邮箱</p></td>
+            <td><p><%=posts.email%></p></td>
+          </tr>
+          <tr>
+            <td><p id="address">通讯地址</p></td>
+            <td><p><%=posts.address%></p></td>
+          </tr>
+          <tr>
+            <td><p id="credit">信用状况</p></td>
+            <td><p><%=posts.credit%></p></td>
+          </tr>
+          <tr>
+            <td><p id="dealTimes">交易次数</p></td>
+            <td><p><%=posts.dealTimes%></p></td>
+          </tr>
+          <tr>
+            <td><p id="dealSumMoney">交易金额</p></td>
+            <td><p><%=posts.dealSumMoney%></p></td>
+          </tr>
+          <tr>
+            <td><p id="lastDealTime">最近交易时间</p></td>
+            <td><p><%=posts.lastDealTime%></p></td>
+          </tr>
+        </table>
+      <%}else if(InfoType == "sale"){%>
+        <table>
+          <tr>
+            <td><p>订单编号</p></td>
+            <td><p><%=posts._id%></p></td>
+          </tr>
+          <tr>
+            <td><p id="carId">车辆编号</p></td>
+            <td><p><%=posts.carId%></p></td>
+          </tr>
+          <tr>
+            <td><p id="customerId">客户编号</p></td>
+            <td><p><%=posts.customerId%></p></td>
+          </tr>
+          <tr>
+            <td><p id="price">价格</p></td>
+            <td><p><%=posts.price%></p></td>
+          </tr>
+          <tr>
+            <td><p id="discount">折扣</p></td>
+            <td><p><%=posts.discount%></p></td>
+          </tr>
+          <tr>
+            <td><p id="payMethod">结算方式</p></td>
+            <td><p><%=posts.payMethod%></p></td>
+          </tr>
+        </table>
+      <%}%>
+    <%}else{%>
+      <table>
+        <tr>
+          <td>未找到</td>
+        </tr>
+      </table>
+    <%}%>
+  </div>
+<%- include footer%>
